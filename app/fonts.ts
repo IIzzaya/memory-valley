@@ -22,9 +22,11 @@ export const merryWeather = Merriweather({
 // 可选导出一个样式对象，方便复用
 export const caveatFont = {
 	fontFamily: "'Caveat', cursive",
+	textShadow: "2px 2px 6px rgba(0, 0, 0, 0.6)",
 };
 
 // 可选导出一个样式对象，方便复用
 export const maShanZhengFont = {
 	fontFamily: "'Ma Shan Zheng', cursive",
+	textShadow: "2px 2px 6px rgba(0, 0, 0, 0.6)",
 };
