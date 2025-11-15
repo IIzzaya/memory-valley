@@ -26,8 +26,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # 改为使用 personal_access_token
-          personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./out
           external_repository: Ilzzaya/memory-valley  # 明确指定仓库
           user_name: 'github-actions[bot]'
