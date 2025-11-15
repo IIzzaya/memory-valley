@@ -1,9 +1,14 @@
 import path from 'node:path';
 import type { NextConfig } from 'next';
 
+const isProd = process.env.NODE_ENV === 'production';
 const umami_url = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_URL ?? '';
 
 const nextConfig: NextConfig = {
+	output: 'export', // 🚨 必须：启用静态导出
+	basePath: isProd ? '/repo-name' : '',
+	assetPrefix: isProd ? '/repo-name/' : '',
+	images: { unoptimized: true },
 	reactStrictMode: true,
 	pageExtensions: ['ts', 'tsx'],
 	transpilePackages: ['next-mdx-remote'],

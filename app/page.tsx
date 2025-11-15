@@ -1,42 +1,27 @@
-import Intro from "./components/intro";
-import HeroWrapper from "./components/hero-wrapper";
-import { ScrollProvider } from "./components/providers/ScrollProvider";
-import Works from "./components/work/works";
-import SplashCursor from "./components/splash-cursor";
-import PageFirst from "./components/page-first";
-import PageLast from "./components/page-last";
-
-import Header from "./components/header";
-import PageContainer from "./components/layouts/page-container";
-import { Thoughts } from "./components/thoughts";
-import { getPosts } from "./thoughts/utils";
-import Parallax from "./components/parallax";
-import ImageStacking from "./components/image-stacking";
-import FramerStacking from "./components/framer-stacking";
-import ScrollTextTest from "./components/scroll-text-test";
-import StickyScroll from "./components/sticky-scroll";
-import Page20171111 from "./components/page-20171111";
-import Page20171115 from "./components/page-20171115";
-import Page20171118 from "./components/page-20171118";
-import Page20171119 from "./components/page-20171119-wrapper";
-import Page20171224 from "./components/page-20171224";
-import Page20180305 from "./components/page-20180305";
-import Page20180401 from "./components/page-20180401";
-import Page20180406 from "./components/page-20180406";
-import Page20180429 from "./components/page-20180429";
-import Page20180527 from "./components/page-20180527";
-import Page20180829 from "./components/page-20180829";
-import Page20181003 from "./components/page-20181003";
-import Page20181004 from "./components/page-20181004";
-import Page20181005 from "./components/page-20181005";
+import Page20171111 from './components/page-20171111';
+import Page20171115 from './components/page-20171115';
+import Page20171118 from './components/page-20171118';
+import Page20171119 from './components/page-20171119-wrapper';
+import Page20171224 from './components/page-20171224';
+import Page20180305 from './components/page-20180305';
+import Page20180401 from './components/page-20180401';
+import Page20180406 from './components/page-20180406';
+import Page20180429 from './components/page-20180429';
+import Page20180527 from './components/page-20180527';
+import Page20180829 from './components/page-20180829';
+import Page20181003 from './components/page-20181003';
+import Page20181004 from './components/page-20181004';
+import Page20181005 from './components/page-20181005';
+import PageFirst from './components/page-first';
+import PageLast from './components/page-last';
+import { ScrollProvider } from './components/providers/ScrollProvider';
+import SplashCursor from './components/splash-cursor';
 
 export default function Home() {
-	const posts = getPosts();
-
 	return (
 		<ScrollProvider>
 			<SplashCursor
-				containerClassName="min-h-svh w-screen"
+				containerClassName='min-h-svh w-screen'
 				usePrimaryColors={true}
 			>
 				<PageFirst />
@@ -66,9 +51,6 @@ export default function Home() {
 	<ScrollTextTest />
 	<StickyScroll />
 	<FramerStacking />
-	<PageContainer>
-		<Thoughts posts={posts} />
-	</PageContainer>
 	<Intro />
 	<Works />
 	*/
