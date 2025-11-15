@@ -1,32 +1,33 @@
-name: Deploy to GitHub Pages
+name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # 当推送到main分支时触发
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. 拉取代码
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. 设置Node.js环境
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # 建议使用18或20等LTS版本
+          node-version: '20'  # 改为 20，Next.js 要求 >=20.9.0
+          cache: 'npm'
 
-      # 3. 安装依赖并构建
-      - name: Install dependencies and build
-        run: |
-          npm ci
-          npm run build
+      - name: Install dependencies
+        run: npm ci
 
-      # 4. 部署到GitHub Pages
-      - name: Deploy
+      - name: Build project
+        run: npm run build
+
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll  # Next.js 默认输出到 out 目录
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # 这里替换为你的实际构建输出目录，如 `dist`
+          publish_dir: ./out  # Next.js 的静态输出目录

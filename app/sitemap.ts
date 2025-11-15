@@ -1,6 +1,6 @@
 import { getPosts } from './thoughts/utils';
 
-export const baseUrl = 'https://dalelarroder.com';
+export const baseUrl = 'https://iizzaya.github.io/memory-valley';
 
 export default async function sitemap() {
 	const blogs = getPosts().map((post) => ({
