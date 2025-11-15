@@ -25,7 +25,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Next.js (static export)
+      - name: Setup Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy
         run: npm run deploy
 
       - name: Copy 404.html
