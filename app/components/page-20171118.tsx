@@ -15,7 +15,7 @@ export default function Page() {
 							className='sticky top-0 h-screen place-content-center'
 						>
 							<img
-								src={src}
+								src={getAssetPath(src)}
 								alt=''
 								className='transition-all duration-300 object-cover'
 							/>

@@ -24,6 +24,7 @@ export default function Page() {
 								src={getAssetPath(src)}
 								alt=''
 								className='transition-all duration-300 w-full h-auto object-cover'
+								loading='lazy'
 							/>
 						</figure>
 					))}

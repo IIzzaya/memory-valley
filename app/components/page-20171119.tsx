@@ -102,7 +102,7 @@ export default function Page() {
 		>
 			<div
 				className='
-				mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center font-semibold tracking-tight
+				mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center tracking-tight
 				text-4xl px-10 py-24
 				md:text-6xl md:py-28
 				lg:text-7xl lg:px-20 lg:py-3'
