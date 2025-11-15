@@ -6,8 +6,8 @@ const umami_url = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_URL ?? '';
 
 const nextConfig: NextConfig = {
 	output: 'export', // 🚨 必须：启用静态导出
-	basePath: isProd ? '/repo-name' : '',
-	assetPrefix: isProd ? '/repo-name/' : '',
+	basePath: isProd ? '/memory-valley' : '',
+	assetPrefix: isProd ? '/memory-valley/' : '',
 	images: { unoptimized: true },
 	reactStrictMode: true,
 	pageExtensions: ['ts', 'tsx'],
