@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[39951,["/memory-valley/_next/static/chunks/f8e3e87475c90648.js","/memory-valley/_next/static/chunks/a62dffbc69ced1be.js"],"default"]
 3:I[79644,["/memory-valley/_next/static/chunks/f8e3e87475c90648.js","/memory-valley/_next/static/chunks/a62dffbc69ced1be.js"],"default"]
-0:{"buildId":"Yo2eFsns6OPF4HdspqIBH","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"ydDXPYUiyA33jVKziauCU","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
