@@ -3,11 +3,11 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - main   # ⬅ 当推送到 main 分支时自动部署
-  workflow_dispatch:  # ⬅ 允许手动运行
+      - main
+  workflow_dispatch:
 
 permissions:
-  contents: write   # ⬅ 允许 GitHub Actions 推送分支
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false  # 必须，否则会覆盖我们自定义的 token
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,16 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Setup Git identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Deploy
-        run: npm run deploy
-        env:
-          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # <--- 关键
+      - name: Build Next.js (static export)
+        run: npm run build  # ✔ Next.js 会自动生成 out/
 
       - name: Copy 404.html
         run: cp out/index.html out/404.html
@@ -46,5 +38,5 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
           publish_branch: gh-pages
+          publish_dir: ./out
