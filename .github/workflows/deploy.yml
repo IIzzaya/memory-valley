@@ -28,6 +28,6 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./out
-          external_repository: Ilzzaya/memory-valley  # 明确指定仓库
+          external_repository: iizzaya/memory-valley  # 明确指定仓库
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
