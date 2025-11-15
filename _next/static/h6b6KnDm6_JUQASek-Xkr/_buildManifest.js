@@ -1,15 +1,6 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
-    "afterFiles": [
-      {
-        "source": "/memory-valley/umami.js",
-        "destination": "/memory-valley/script.js"
-      },
-      {
-        "source": "/memory-valley/api/send",
-        "destination": "/memory-valley/api/send"
-      }
-    ],
+    "afterFiles": [],
     "beforeFiles": [
       {
         "source": "/memory-valley//_next/:path+",
