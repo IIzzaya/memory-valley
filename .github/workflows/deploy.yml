@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'  # 改为 20，Next.js 要求 >=20.9.0
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -26,5 +26,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  # Next.js 的静态输出目录
+          # 改为使用 personal_access_token
+          personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./out
+          external_repository: Ilzzaya/memory-valley  # 明确指定仓库
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
