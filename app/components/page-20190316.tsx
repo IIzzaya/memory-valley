@@ -47,7 +47,7 @@ export default function Page() {
 						/>
 						<TextAnimation
 							className='text-4xl max-w-md mx-auto font-medium capitalize whitespace-nowrap'
-							text='家乡的石楠花'
+							text='交大的樱花'
 							variants={{
 								hidden: {
 									filter: 'blur(10px)',

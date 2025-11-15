@@ -18,7 +18,6 @@ export default function Page() {
 						'/images/20180527_4.jpg',
 						'/images/20180527_5.jpg',
 						'/images/20180527_6.jpg',
-						'/images/20180527_7.jpg',
 					].map((src) => (
 						<figure key={src} className='grid place-content-center'>
 							<img

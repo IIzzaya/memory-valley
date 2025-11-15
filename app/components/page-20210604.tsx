@@ -86,6 +86,23 @@ export default function Page() {
 								},
 							}}
 						/>
+						<TextAnimation
+							className='text-4xl max-w-md mx-auto font-medium capitalize whitespace-nowrap'
+							text='和你一起'
+							variants={{
+								hidden: {
+									filter: 'blur(10px)',
+									opacity: 0,
+									y: 20,
+								},
+								visible: {
+									filter: 'blur(0px)',
+									opacity: 1,
+									y: 0,
+									transition: { ease: 'linear' },
+								},
+							}}
+						/>
 					</div>
 				</div>
 
