@@ -1,20 +1,19 @@
-"use client";
+'use client';
 
-import classNames from "classnames";
-import ArrowDown from "./arrow-down";
-import SplashCursor from "./splash-cursor";
-import Link from "next/link";
-import { merryWeather } from "../fonts";
-import { caveatFont } from "../fonts";
-import { useLenis } from "lenis/dist/lenis-react";
-import { maShanZhengFont } from "../fonts";
-import { useEffect, useRef, useState } from "react";
+import classNames from 'classnames';
+import { useLenis } from 'lenis/dist/lenis-react';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import { caveatFont, maShanZhengFont, merryWeather } from '../fonts';
+import { getAssetPath } from '../utils';
+import ArrowDown from './arrow-down';
+import SplashCursor from './splash-cursor';
 
 export const useDate = () => {
-	const locale = "en";
+	const locale = 'en';
 	const [today, setDate] = useState(new Date());
 
-	const dateBegin = Date.parse("2017-11-11T12:00:00Z"); // Save the current date to be able to trigger an update
+	const dateBegin = Date.parse('2017-11-11T12:00:00Z'); // Save the current date to be able to trigger an update
 
 	useEffect(() => {
 		const timer = setInterval(() => {
@@ -29,13 +28,13 @@ export const useDate = () => {
 
 	const dateToday = today.getDate();
 	const todayDate = `${today.toLocaleDateString(locale, {
-		year: "numeric",
-	})} ${today.toLocaleDateString(locale, { month: "long" })} ${dateToday}`;
+		year: 'numeric',
+	})} ${today.toLocaleDateString(locale, { month: 'long' })} ${dateToday}`;
 	const todayTime = today.toLocaleTimeString(locale, {
-		hour: "numeric",
+		hour: 'numeric',
 		hour12: false,
-		minute: "numeric",
-		second: "numeric",
+		minute: 'numeric',
+		second: 'numeric',
 	});
 
 	const dateNow = Date.now();
@@ -88,33 +87,27 @@ export default function Page() {
 		const percentY =
 			Math.min(
 				clientHeight + halfH,
-				Math.max(-screenH, scrollY - offsetTop) + halfH
+				Math.max(-screenH, scrollY - offsetTop) + halfH,
 			) / clientHeight;
 
-		progress = Math.min(
-			numOfPages - 0.5,
-			Math.max(0.5, percentY * numOfPages)
-		);
+		progress = Math.min(numOfPages - 0.5, Math.max(0.5, percentY * numOfPages));
 	}
 
-	let timer = useDate();
+	const timer = useDate();
 
 	return (
 		<div
 			ref={refContainer}
-			className="relative z-10 bg-black text-white dark:bg-white dark:text-black"
+			className='relative z-10 bg-black text-white dark:bg-white dark:text-black'
 		>
 			<div
-				className="
+				className='
 				mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center font-semibold tracking-tight
 				text-4xl px-10 py-24
 				md:text-6xl md:py-28
-				lg:text-7xl lg:px-20 lg:py-3"
+				lg:text-7xl lg:px-20 lg:py-3'
 			>
-				<div
-					className="leading-[1.8] text-center"
-					style={maShanZhengFont}
-				>
+				<div className='leading-[1.8] text-center' style={maShanZhengFont}>
 					<div style={{ opacity: opacityForBlock(progress, 0) }}>
 						自那一天起
 					</div>
@@ -127,27 +120,25 @@ export default function Page() {
 						划入我的星空
 					</div>
 
-					<div style={{ opacity: opacityForBlock(progress, 3) }}>
-						一同闪耀
-					</div>
+					<div style={{ opacity: opacityForBlock(progress, 3) }}>一同闪耀</div>
 
 					<div
-						className="inline-block whitespace-nowrap"
+						className='inline-block whitespace-nowrap'
 						style={{ opacity: opacityForBlock(progress, 4) }}
 					>
 						<span>距今已有</span>
-						<span className="pr-2 text-5xl" style={caveatFont}>
+						<span className='pr-2 text-5xl' style={caveatFont}>
 							{timer.deltaInDay}
 						</span>
 						<span>个日夜</span>
 					</div>
 
 					<div
-						className="inline-block whitespace-nowrap"
+						className='inline-block whitespace-nowrap'
 						style={{ opacity: opacityForBlock(progress, 5) }}
 					>
 						<span>历经</span>
-						<span className="pr-2 text-5xl" style={caveatFont}>
+						<span className='pr-2 text-5xl' style={caveatFont}>
 							{timer.deltaInSeconds}
 						</span>
 						<span>针分秒</span>
@@ -156,9 +147,7 @@ export default function Page() {
 					<div style={{ opacity: opacityForBlock(progress, 6) }}>
 						我们的故事
 					</div>
-					<div style={{ opacity: opacityForBlock(progress, 7) }}>
-						开始书写
-					</div>
+					<div style={{ opacity: opacityForBlock(progress, 7) }}>开始书写</div>
 				</div>
 			</div>
 		</div>

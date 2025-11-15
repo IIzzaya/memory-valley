@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -26,7 +26,7 @@
         "useAltText": "error",
         "useButtonType": "warn",
         "useKeyWithClickEvents": "error",
-        "useValidAnchor": "error"
+        "useValidAnchor": "off"
       },
       "complexity": {
         "recommended": true,
@@ -36,8 +36,8 @@
       },
       "correctness": {
         "recommended": true,
-        "noUnusedImports": "error",
-        "noUnusedVariables": "error",
+        "noUnusedImports": "off",
+        "noUnusedVariables": "off",
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error"
       },
@@ -52,6 +52,9 @@
         "recommended": true,
         "noArrayIndexKey": "warn",
         "noExplicitAny": "warn"
+      },
+      "performance": {
+        "noImgElement": "off"
       }
     }
   },

@@ -5,9 +5,9 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
 	output: 'export',
+	images: { unoptimized: true }, // 关键配置：禁用图片优化
 	basePath: isProd ? '/memory-valley' : '',
 	assetPrefix: isProd ? '/memory-valley/' : '',
-	images: { unoptimized: true },
 	reactStrictMode: true,
 	pageExtensions: ['ts', 'tsx'],
 	transpilePackages: ['next-mdx-remote'],
