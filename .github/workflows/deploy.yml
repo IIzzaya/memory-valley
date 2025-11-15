@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # 必须，否则会覆盖我们自定义的 token
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,6 +34,9 @@ jobs:
 
       - name: Deploy
         run: npm run deploy
+        env:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # <--- 关键
 
       - name: Copy 404.html
         run: cp out/index.html out/404.html
